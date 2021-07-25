@@ -26,11 +26,11 @@ void setup() {
   pinMode(t60s, OUTPUT);
   pinMode(t120s, OUTPUT);
   pinMode(t180s, OUTPUT);
-  pinMode(on_off, OUTPUT);
-  pinMode(settime, INPUT);
-  pinMode(on_off, INPUT);
+
+  pinMode(settime, INPUT_PULLUP);
+  pinMode(on_off, INPUT_PULLUP);
   digitalWrite(SSR,LOW);
-  digitalWrite(on_off,LOW);
+  
   digitalWrite(t60s,HIGH);
   digitalWrite(t120s,LOW);
   digitalWrite(t180s,LOW);
@@ -68,7 +68,7 @@ void loop() {
     }
   }
 
-  if (button_on_offState != HIGH){
+  if (State_on_off != HIGH){
      digitalWrite(SSR,LOW);
     int timerbutton = digitalRead(settime);
 
