@@ -17,7 +17,7 @@
 #define t60s 4  // LED Green
 #define t120s 5 // LED Yellow
 #define t180s 6  // LED Red
-#define SSR 11  //Output to control SSR and LED Blue
+#define SSR 7  //Output to control SSR and LED Blue
 
 unsigned long time[3] = {60000,120000,180000}; // Timer-array, time in milliseconds
 int zeit = 0;
