@@ -17,7 +17,7 @@
 #define t60s 4  // LED Green
 #define t120s 5 // LED Yellow
 #define t180s 6  // LED Red
-#define SSR 7  //Output to control SSR and LED Blue
+#define SSR 11  //Output to control SSR and LED Blue
 
 unsigned long time[3] = {60000,120000,180000}; // Timer-array, time in milliseconds
 int zeit = 0;
@@ -40,7 +40,8 @@ void setup() {
   pinMode(t60s, OUTPUT);
   pinMode(t120s, OUTPUT);
   pinMode(t180s, OUTPUT);
-
+  pinMode(SSR, OUTPUT);
+  
   pinMode(settime, INPUT_PULLUP);
   pinMode(on_off, INPUT_PULLUP);
   digitalWrite(SSR,LOW);
@@ -92,6 +93,7 @@ void loop() {
 
 
   if (State_on_off != HIGH){
+   
      digitalWrite(SSR,LOW);
      timerbutton = digitalRead(settime);
 
